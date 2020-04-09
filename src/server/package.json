@@ -1,0 +1,12 @@
+{
+  "name": "nodemon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Eugenia Giuliodori<eugegiuliodori@gmail.com>",
+  "license": "MIT"
+}
