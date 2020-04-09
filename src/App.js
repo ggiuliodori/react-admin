@@ -1,8 +1,8 @@
 import React,{Component} from "react"
-import Navigation from "./app/Navigation"
-import PageContent from "./app/PageContent"
-import Footer from "./app/Footer"
-import Sidemenu from "./app/Sidemenu"
+import Navigation from "./client/app/Navigation"
+import PageContent from "./client/app/PageContent"
+import Footer from "./client/app/Footer"
+import Sidemenu from "./client/app/Sidemenu"
 
 
 export default class App extends Component{
