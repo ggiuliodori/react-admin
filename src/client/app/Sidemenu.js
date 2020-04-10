@@ -154,7 +154,7 @@ export default class Sidemenu extends Component {
                     <span className="fa fa-chevron-down"/></a>
                   <ul className="nav child_menu">
                     <li>
-                      <a href="/">Dashboard</a>
+                      <a href="/DashboardInic">Dashboard</a>
                     </li>
                     <li>
                       <a href="/Dashboard1">Dashboard1</a>
