@@ -4,6 +4,9 @@ const bodyParser = require('body-parser');
 const mysql = require('mysql');
 const path = require('path');
 const app = express();
+const router = express.Router();
+const {check} = require('express-validator');
+const authController = require('../controllers/authController');
 
 // const {getHomePage} = require('./routes/index');
 // const {addPlayerPage, addPlayer, deletePlayer, editPlayer, editPlayerPage} = require('./routes/player');
@@ -37,14 +40,7 @@ app.use(express.static(path.join(__dirname, 'public'))); // configure express to
 app.use(fileUpload()); // configure fileupload
 
 // routes for the app
-/*
-app.get('/', getHomePage);
-app.get('/add', addPlayerPage);
-app.get('/edit/:id', editPlayerPage);
-app.get('/delete/:id', deletePlayer);
-app.post('/add', addPlayer);
-app.post('/edit/:id', editPlayer);
-*/
+app.post('/auth', require('./routes/auth.js'));
 
 // set the app to listen on the port
 app.listen(port, () => {

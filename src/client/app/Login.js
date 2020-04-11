@@ -7,10 +7,12 @@ const Login = () => {
 
     const [usuario,setUsuario]=useState({
         name:'',
-        password:''
+        password:'',
+        errorformulario:false
     });
 
     const {name,password}=usuario;
+    let {errorformulario}=usuario;
 
     const onChange = e => {
         setUsuario({
@@ -18,10 +20,25 @@ const Login = () => {
         });
     }
 
+
+
     const onSubmit = e => {
         e.preventDefault();
+        if((name.trim()==='')||(password.trim()==='')){
+            setUsuario({
+                ...usuario, errorformulario:true
+            });
+            return;
+        }
+        setUsuario({
+            ...usuario, errorformulario:false
+        });
+        const checkUser = async () => {
+            
+      
+          }
+          checkUser();
 
-        
     }
 
     return (
@@ -31,12 +48,13 @@ const Login = () => {
                 <form
                     onSubmit={onSubmit}
                 >
+                    
                     <div className='campo-form'>
                         <label htmlFor='name'>User</label>
                         <input
                             type='name'
                             id='name'
-                            name='user'
+                            name='name'
                             value={name}
                             placeholder='Your user name'
                             onChange={onChange}
@@ -64,6 +82,7 @@ const Login = () => {
                 <Link to={'new-user'} className='enlace-cuenta'>
                     New user
                 </Link>
+                {errorformulario ? <p className='mensaje error'>Must write user and password</p> :null}
             </div>
         </div>
     );
